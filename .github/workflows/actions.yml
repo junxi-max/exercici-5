@@ -1,0 +1,45 @@
+name: test
+
+on:
+  push:
+    branch: [main]
+
+jobs:
+  test-win:
+    runs-on: windows-latest
+   
+    steps:
+      - name: checkout windows
+        uses: actions/checkout@v6
+
+    steps:
+      - name: setup windows
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+  test-linux:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: checkout linux
+        uses: actions/checkout@v6
+
+    steps:
+      - name: setup linux
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+
+  test-mac:
+    runs-on: macos-latest
+    
+    steps:
+      - name: checkout mac
+        uses: actions/checkout@v6
+
+    steps:
+      - name: setup mac
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
